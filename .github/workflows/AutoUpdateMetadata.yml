@@ -36,7 +36,8 @@ jobs:
         run: |
           echo "🔍 Validating JSON files..."
           
-          for file in papers/**/*.json; do
+          # 递归查找所有 JSON 文件（支持子文件夹）
+          find papers -name "*.json" -type f | while read file; do
             if [ "$file" == "papers/metadata.json" ]; then
               continue
             fi
@@ -75,6 +76,32 @@ jobs:
           const fs = require('fs');
           const path = require('path');
           
+          // 递归扫描目录下的所有 JSON 文件
+          function getAllJsonFiles(dir, baseDir = dir) {
+            let results = [];
+            const list = fs.readdirSync(dir);
+            
+            for (const file of list) {
+              const filepath = path.join(dir, file);
+              const stat = fs.statSync(filepath);
+              
+              if (stat.isDirectory()) {
+                // 递归扫描子文件夹
+                results = results.concat(getAllJsonFiles(filepath, baseDir));
+              } else if (file.endsWith('.json') && file !== 'metadata.json') {
+                // 计算相对路径（相对于 papers 目录）
+                const relativePath = path.relative(baseDir, filepath).replace(/\\/g, '/');
+                results.push({
+                  filename: file,
+                  filepath: filepath,
+                  relativePath: relativePath,
+                });
+              }
+            }
+            
+            return results;
+          }
+          
           // 读取当前 metadata.json
           const metadataPath = 'papers/metadata.json';
           let metadata = { papers: [], lastUpdated: new Date().toISOString() };
@@ -87,27 +114,27 @@ jobs:
             }
           }
           
-          // 扫描 papers 目录下的所有 JSON 文件
+          // 扫描 papers 目录下的所有 JSON 文件（包括子文件夹）
           const papersDir = 'papers';
-          const files = fs.readdirSync(papersDir).filter(f => 
-            f.endsWith('.json') && f !== 'metadata.json'
-          );
+          const allFiles = getAllJsonFiles(papersDir);
           
-          console.log(`📚 Found ${files.length} paper file(s)`);
+          console.log(`📚 Found ${allFiles.length} paper file(s)`);
+          if (allFiles.length > 0) {
+            console.log('📂 File structure:');
+            allFiles.forEach(f => console.log(`   - ${f.relativePath}`));
+          }
           
           // 构建新的 papers 列表
           const newPapers = [];
           const processedIds = new Set();
           
-          for (const file of files) {
-            const filepath = path.join(papersDir, file);
-            
+          for (const fileInfo of allFiles) {
             try {
-              const paper = JSON.parse(fs.readFileSync(filepath, 'utf8'));
+              const paper = JSON.parse(fs.readFileSync(fileInfo.filepath, 'utf8'));
               
               // 检查重复 ID
               if (processedIds.has(paper.id)) {
-                console.error(`❌ Duplicate paper ID found: ${paper.id} in ${file}`);
+                console.error(`❌ Duplicate paper ID found: ${paper.id} in ${fileInfo.relativePath}`);
                 process.exit(1);
               }
               processedIds.add(paper.id);
@@ -125,7 +152,7 @@ jobs:
                   tags: paper.tags || existing.tags || [],
                   difficulty: paper.difficulty || existing.difficulty || 'other',
                   questionCount: paper.questions?.length || 0,
-                  filepath: `papers/${file}`,
+                  filepath: `papers/${fileInfo.relativePath}`,
                   createdAt: existing.createdAt || paper.createdAt || new Date().toISOString(),
                   updatedAt: new Date().toISOString(),
                   version: paper.version || existing.version || '1.0.0',
@@ -141,7 +168,7 @@ jobs:
                   tags: paper.tags || [],
                   difficulty: paper.difficulty || 'other',
                   questionCount: paper.questions?.length || 0,
-                  filepath: `papers/${file}`,
+                  filepath: `papers/${fileInfo.relativePath}`,
                   createdAt: paper.createdAt || new Date().toISOString(),
                   updatedAt: new Date().toISOString(),
                   version: paper.version || '1.0.0',
@@ -149,7 +176,7 @@ jobs:
                 console.log(`✨ Added new: ${paper.title} (${paper.questions?.length || 0} questions)`);
               }
             } catch (error) {
-              console.error(`❌ Error processing ${file}:`, error.message);
+              console.error(`❌ Error processing ${fileInfo.relativePath}:`, error.message);
               process.exit(1);
             }
           }
