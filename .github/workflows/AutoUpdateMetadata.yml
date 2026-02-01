@@ -1,0 +1,201 @@
+name: Auto Update Metadata
+
+on:
+  push:
+    paths:
+      - 'papers/**/*.json'
+    branches:
+      - main
+      - master
+  pull_request:
+    paths:
+      - 'papers/**/*.json'
+  workflow_dispatch:  # 支持手动触发
+
+jobs:
+  validate-and-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Validate JSON files
+        run: |
+          echo "🔍 Validating JSON files..."
+          
+          for file in papers/**/*.json; do
+            if [ "$file" == "papers/metadata.json" ]; then
+              continue
+            fi
+            
+            echo "Checking: $file"
+            
+            # 检查 JSON 格式
+            if ! jq empty "$file" 2>/dev/null; then
+              echo "❌ Invalid JSON format: $file"
+              exit 1
+            fi
+            
+            # 检查必填字段
+            if ! jq -e '.id and .title and .questions' "$file" > /dev/null; then
+              echo "❌ Missing required fields (id, title, questions) in: $file"
+              exit 1
+            fi
+            
+            # 检查 questions 数组不为空
+            question_count=$(jq '.questions | length' "$file")
+            if [ "$question_count" -eq 0 ]; then
+              echo "❌ No questions found in: $file"
+              exit 1
+            fi
+            
+            echo "✅ $file is valid ($question_count questions)"
+          done
+          
+          echo "✅ All JSON files are valid!"
+      
+      - name: Auto update metadata.json
+        run: |
+          echo "📝 Updating metadata.json..."
+          
+          node << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          
+          // 读取当前 metadata.json
+          const metadataPath = 'papers/metadata.json';
+          let metadata = { papers: [], lastUpdated: new Date().toISOString() };
+          
+          if (fs.existsSync(metadataPath)) {
+            try {
+              metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+            } catch (error) {
+              console.log('⚠️  metadata.json is invalid, creating new one');
+            }
+          }
+          
+          // 扫描 papers 目录下的所有 JSON 文件
+          const papersDir = 'papers';
+          const files = fs.readdirSync(papersDir).filter(f => 
+            f.endsWith('.json') && f !== 'metadata.json'
+          );
+          
+          console.log(`📚 Found ${files.length} paper file(s)`);
+          
+          // 构建新的 papers 列表
+          const newPapers = [];
+          const processedIds = new Set();
+          
+          for (const file of files) {
+            const filepath = path.join(papersDir, file);
+            
+            try {
+              const paper = JSON.parse(fs.readFileSync(filepath, 'utf8'));
+              
+              // 检查重复 ID
+              if (processedIds.has(paper.id)) {
+                console.error(`❌ Duplicate paper ID found: ${paper.id} in ${file}`);
+                process.exit(1);
+              }
+              processedIds.add(paper.id);
+              
+              // 查找是否已存在
+              const existing = metadata.papers.find(p => p.id === paper.id);
+              
+              if (existing) {
+                // 更新现有记录
+                newPapers.push({
+                  id: paper.id,
+                  title: paper.title,
+                  description: paper.description || existing.description || '',
+                  author: paper.author || existing.author || 'Anonymous',
+                  tags: paper.tags || existing.tags || [],
+                  difficulty: paper.difficulty || existing.difficulty || 'other',
+                  questionCount: paper.questions?.length || 0,
+                  filepath: `papers/${file}`,
+                  createdAt: existing.createdAt || paper.createdAt || new Date().toISOString(),
+                  updatedAt: new Date().toISOString(),
+                  version: paper.version || existing.version || '1.0.0',
+                });
+                console.log(`📝 Updated: ${paper.title} (${paper.questions?.length || 0} questions)`);
+              } else {
+                // 添加新记录
+                newPapers.push({
+                  id: paper.id,
+                  title: paper.title,
+                  description: paper.description || '',
+                  author: paper.author || 'Anonymous',
+                  tags: paper.tags || [],
+                  difficulty: paper.difficulty || 'other',
+                  questionCount: paper.questions?.length || 0,
+                  filepath: `papers/${file}`,
+                  createdAt: paper.createdAt || new Date().toISOString(),
+                  updatedAt: new Date().toISOString(),
+                  version: paper.version || '1.0.0',
+                });
+                console.log(`✨ Added new: ${paper.title} (${paper.questions?.length || 0} questions)`);
+              }
+            } catch (error) {
+              console.error(`❌ Error processing ${file}:`, error.message);
+              process.exit(1);
+            }
+          }
+          
+          // 按创建时间排序（最新的在前）
+          newPapers.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+          
+          // 更新 metadata
+          metadata.papers = newPapers;
+          metadata.lastUpdated = new Date().toISOString();
+          
+          // 写入文件
+          fs.writeFileSync(
+            metadataPath,
+            JSON.stringify(metadata, null, 2) + '\n',
+            'utf8'
+          );
+          
+          console.log(`✅ Updated metadata.json with ${newPapers.length} paper(s)`);
+          console.log(`📊 Statistics:`);
+          console.log(`   - Total papers: ${newPapers.length}`);
+          console.log(`   - Total questions: ${newPapers.reduce((sum, p) => sum + p.questionCount, 0)}`);
+          
+          const difficulties = newPapers.reduce((acc, p) => {
+            acc[p.difficulty] = (acc[p.difficulty] || 0) + 1;
+            return acc;
+          }, {});
+          console.log(`   - By difficulty:`, difficulties);
+          EOF
+      
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add papers/metadata.json
+          
+          if git diff --staged --quiet; then
+            echo "ℹ️  No changes to metadata.json"
+          else
+            git commit -m "chore: auto-update metadata.json [skip ci]"
+            git push
+            echo "✅ metadata.json has been updated and pushed"
+          fi
+      
+      - name: Summary
+        run: |
+          echo "## ✅ Workflow completed successfully!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "All JSON files have been validated and metadata.json has been updated." >> $GITHUB_STEP_SUMMARY
