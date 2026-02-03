@@ -5,14 +5,12 @@
       "title": "Daily Life Vocabulary Challenge",
       "description": "A beginner-level fill-in-the-blanks test focusing on common words used in everyday situations.",
       "author": "Gemini 3.0 Pro",
-      "tags": [
-        "example"
-      ],
+      "tags": [],
       "difficulty": "beginner",
       "questionCount": 30,
       "filepath": "papers/beginner/community-daily-life-vocabulary-challenge-1770114024847.json",
       "createdAt": "2026-02-03T10:19:28.778Z",
-      "updatedAt": "2026-02-03T10:23:21.095Z",
+      "updatedAt": "2026-02-03T10:25:38.098Z",
       "version": "1.0.0"
     },
     {
@@ -25,9 +23,9 @@
       "questionCount": 30,
       "filepath": "papers/advanced/community-高考英语高频难词突破训练-1770113798595.json",
       "createdAt": "2026-02-03T10:16:11.545Z",
-      "updatedAt": "2026-02-03T10:23:21.095Z",
+      "updatedAt": "2026-02-03T10:25:38.098Z",
       "version": "1.0.0"
     }
   ],
-  "lastUpdated": "2026-02-03T10:23:21.095Z"
+  "lastUpdated": "2026-02-03T10:25:38.098Z"
 }
