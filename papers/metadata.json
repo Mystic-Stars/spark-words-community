@@ -1,6 +1,19 @@
 {
   "papers": [
     {
+      "id": "community-高考英语高频难词突破训练-1770113798595",
+      "title": "高考英语高频难词突破训练",
+      "description": "精选30个高考英语高级词汇，旨在提升词汇运用能力与语境理解水平。",
+      "author": "Gemini 3.0 Pro",
+      "tags": [],
+      "difficulty": "advanced",
+      "questionCount": 30,
+      "filepath": "papers/advanced/community-高考英语高频难词突破训练-1770113798595.json",
+      "createdAt": "2026-02-03T10:16:11.545Z",
+      "updatedAt": "2026-02-03T10:18:15.624Z",
+      "version": "1.0.0"
+    },
+    {
       "id": "community-高考英语-cet-4-6-核心词汇首字母填空-地狱难度版--17699154706",
       "title": "高考英语/CET-4/6 核心词汇首字母填空（地狱难度版）",
       "description": "本练习集专为高分段学生设计。题目不再直白给出线索，而是隐藏在复杂的句法逻辑和语境推断中。请注意单词的词性转换（如名词化、分词形式等）。",
@@ -10,7 +23,7 @@
       "questionCount": 30,
       "filepath": "papers/advanced/community-高考英语-cet-4-6-核心词汇首字母填空-地狱难度版--1769915470629.json",
       "createdAt": "2026-01-24T08:10:58.240Z",
-      "updatedAt": "2026-02-01T05:07:13.989Z",
+      "updatedAt": "2026-02-03T10:18:15.624Z",
       "version": "1.0.0"
     },
     {
@@ -23,9 +36,9 @@
       "questionCount": 30,
       "filepath": "papers/beginner/community-高考英语-cet-4-6-核心词汇首字母填空-地狱难度版--1769915470629.json",
       "createdAt": "2026-01-24T08:10:58.240Z",
-      "updatedAt": "2026-02-01T05:07:13.990Z",
+      "updatedAt": "2026-02-03T10:18:15.624Z",
       "version": "1.0.0"
     }
   ],
-  "lastUpdated": "2026-02-01T05:07:13.990Z"
+  "lastUpdated": "2026-02-03T10:18:15.625Z"
 }
