@@ -1,0 +1,225 @@
+{
+  "id": "community-daily-life-vocabulary-challenge-1770114024847",
+  "title": "Daily Life Vocabulary Challenge",
+  "description": "A beginner-level fill-in-the-blanks test focusing on common words used in everyday situations.",
+  "tags": [
+    "example"
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "sentence": "I eat an a____ every morning for health.",
+      "answer": "apple",
+      "hint": "a",
+      "translation": "为了健康，我每天早上吃一个苹果。"
+    },
+    {
+      "id": "q2",
+      "sentence": "Please close the d___ when you leave the room.",
+      "answer": "door",
+      "hint": "d",
+      "translation": "离开房间时请关门。"
+    },
+    {
+      "id": "q3",
+      "sentence": "She likes to read a b___ before sleeping.",
+      "answer": "book",
+      "hint": "b",
+      "translation": "她喜欢在睡前读一本书。"
+    },
+    {
+      "id": "q4",
+      "sentence": "Can I have a glass of w____, please?",
+      "answer": "water",
+      "hint": "w",
+      "translation": "请给我一杯水好吗？"
+    },
+    {
+      "id": "q5",
+      "sentence": "The s__ is shining brightly in the sky.",
+      "answer": "sun",
+      "hint": "s",
+      "translation": "太阳在天空中明亮地照耀着。"
+    },
+    {
+      "id": "q6",
+      "sentence": "We go to s_____ five days a week.",
+      "answer": "school",
+      "hint": "s",
+      "translation": "我们要一周去五天学校。"
+    },
+    {
+      "id": "q7",
+      "sentence": "My m_____ cooks delicious dinner for us.",
+      "answer": "mother",
+      "hint": "m",
+      "translation": "我的妈妈为我们做美味的晚餐。"
+    },
+    {
+      "id": "q8",
+      "sentence": "He is my best f_____; we play together often.",
+      "answer": "friend",
+      "hint": "f",
+      "translation": "他是我最好的朋友；我们要经常一起玩。"
+    },
+    {
+      "id": "q9",
+      "sentence": "I need some m____ to buy a new toy.",
+      "answer": "money",
+      "hint": "m",
+      "translation": "我需要一些钱买一个新玩具。"
+    },
+    {
+      "id": "q10",
+      "sentence": "What t___ is it now?",
+      "answer": "time",
+      "hint": "t",
+      "translation": "现在几点了？"
+    },
+    {
+      "id": "q11",
+      "sentence": "The c__ is sleeping on the sofa.",
+      "answer": "cat",
+      "hint": "c",
+      "translation": "那只猫正在沙发上睡觉。"
+    },
+    {
+      "id": "q12",
+      "sentence": "They live in a big h____ with a garden.",
+      "answer": "house",
+      "hint": "h",
+      "translation": "他们住在一所带花园的大房子里。"
+    },
+    {
+      "id": "q13",
+      "sentence": "I feel very h____ because it is my birthday.",
+      "answer": "happy",
+      "hint": "h",
+      "translation": "我感到非常快乐，因为今天是我的生日。"
+    },
+    {
+      "id": "q14",
+      "sentence": "Please sit on this c____.",
+      "answer": "chair",
+      "hint": "c",
+      "translation": "请坐在这把椅子上。"
+    },
+    {
+      "id": "q15",
+      "sentence": "Do you like listening to m____?",
+      "answer": "music",
+      "hint": "m",
+      "translation": "你喜欢听音乐吗？"
+    },
+    {
+      "id": "q16",
+      "sentence": "My d__ loves to run in the park.",
+      "answer": "dog",
+      "hint": "d",
+      "translation": "我的狗喜欢在公园里跑。"
+    },
+    {
+      "id": "q17",
+      "sentence": "I usually drink m___ with my breakfast.",
+      "answer": "milk",
+      "hint": "m",
+      "translation": "我早餐通常喝牛奶。"
+    },
+    {
+      "id": "q18",
+      "sentence": "Put on your s____ before going outside.",
+      "answer": "shoes",
+      "hint": "s",
+      "translation": "出门前穿上你的鞋子。"
+    },
+    {
+      "id": "q19",
+      "sentence": "He drives a red c__ to work.",
+      "answer": "car",
+      "hint": "c",
+      "translation": "他开一辆红色的车去上班。"
+    },
+    {
+      "id": "q20",
+      "sentence": "Can I borrow your p__ to write a note?",
+      "answer": "pen",
+      "hint": "p",
+      "translation": "我可以借你的钢笔写个便条吗？"
+    },
+    {
+      "id": "q21",
+      "sentence": "It is late; time to go to b__.",
+      "answer": "bed",
+      "hint": "b",
+      "translation": "很晚了，该上床睡觉了。"
+    },
+    {
+      "id": "q22",
+      "sentence": "The food is on the t____.",
+      "answer": "table",
+      "hint": "t",
+      "translation": "食物在桌子上。"
+    },
+    {
+      "id": "q23",
+      "sentence": "Our t______ explains the lesson clearly.",
+      "answer": "teacher",
+      "hint": "t",
+      "translation": "我们的老师把课讲得很清楚。"
+    },
+    {
+      "id": "q24",
+      "sentence": "Take an umbrella because of the r___.",
+      "answer": "rain",
+      "hint": "r",
+      "translation": "带把伞，因为下雨了。"
+    },
+    {
+      "id": "q25",
+      "sentence": "I lost my p____ and cannot call you.",
+      "answer": "phone",
+      "hint": "p",
+      "translation": "我丢了手机，不能给你打电话。"
+    },
+    {
+      "id": "q26",
+      "sentence": "What is your n___?",
+      "answer": "name",
+      "hint": "n",
+      "translation": "你叫什么名字？"
+    },
+    {
+      "id": "q27",
+      "sentence": "Let's play a g___ together.",
+      "answer": "game",
+      "hint": "g",
+      "translation": "我们一起玩个游戏吧。"
+    },
+    {
+      "id": "q28",
+      "sentence": "I eat eggs and toast for b________.",
+      "answer": "breakfast",
+      "hint": "b",
+      "translation": "我早餐吃鸡蛋和烤面包。"
+    },
+    {
+      "id": "q29",
+      "sentence": "His f_____ works in a bank.",
+      "answer": "father",
+      "hint": "f",
+      "translation": "他的父亲在银行工作。"
+    },
+    {
+      "id": "q30",
+      "sentence": "I l___ my family very much.",
+      "answer": "love",
+      "hint": "l",
+      "translation": "我非常爱我的家人。"
+    }
+  ],
+  "createdAt": "2026-02-03T10:19:28.778Z",
+  "author": "Gemini 3.0 Pro",
+  "version": "1.0.0",
+  "difficulty": "beginner",
+  "source": "local"
+}
