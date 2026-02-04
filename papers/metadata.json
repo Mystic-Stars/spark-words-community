@@ -1,6 +1,21 @@
 {
   "papers": [
     {
+      "id": "community-interview-english-vocabulary-challenge-1770207645659",
+      "title": "Interview English Vocabulary Challenge",
+      "description": "30 fill-in-the-blank questions focusing on common words used during job interviews.",
+      "author": "Gemini 3.0 Pro",
+      "tags": [
+        "interview"
+      ],
+      "difficulty": "intermediate",
+      "questionCount": 30,
+      "filepath": "papers/intermediate/community-interview-english-vocabulary-challenge-1770207645659.json",
+      "createdAt": "2026-02-04T12:19:49.577Z",
+      "updatedAt": "2026-02-04T12:21:34.899Z",
+      "version": "1.0.0"
+    },
+    {
       "id": "community-daily-life-vocabulary-challenge-1770114024847",
       "title": "Daily Life Vocabulary Challenge",
       "description": "A beginner-level fill-in-the-blanks test focusing on common words used in everyday situations.",
@@ -10,7 +25,7 @@
       "questionCount": 30,
       "filepath": "papers/beginner/community-daily-life-vocabulary-challenge-1770114024847.json",
       "createdAt": "2026-02-03T10:19:28.778Z",
-      "updatedAt": "2026-02-03T10:25:38.098Z",
+      "updatedAt": "2026-02-04T12:21:34.899Z",
       "version": "1.0.0"
     },
     {
@@ -23,9 +38,9 @@
       "questionCount": 30,
       "filepath": "papers/advanced/community-高考英语高频难词突破训练-1770113798595.json",
       "createdAt": "2026-02-03T10:16:11.545Z",
-      "updatedAt": "2026-02-03T10:25:38.098Z",
+      "updatedAt": "2026-02-04T12:21:34.899Z",
       "version": "1.0.0"
     }
   ],
-  "lastUpdated": "2026-02-03T10:25:38.098Z"
+  "lastUpdated": "2026-02-04T12:21:34.899Z"
 }
