@@ -1,0 +1,225 @@
+{
+  "id": "community-interview-english-vocabulary-challenge-1770207645659",
+  "title": "Interview English Vocabulary Challenge",
+  "description": "30 fill-in-the-blank questions focusing on common words used during job interviews.",
+  "tags": [
+    "interview"
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "sentence": "Here is a copy of my r_____ for your review.",
+      "answer": "resume",
+      "hint": "r",
+      "translation": "这是我的简历复印件供您审阅。"
+    },
+    {
+      "id": "q2",
+      "sentence": "I am applying for the p_______ of Marketing Manager.",
+      "answer": "position",
+      "hint": "p",
+      "translation": "我正在申请市场经理的职位。"
+    },
+    {
+      "id": "q3",
+      "sentence": "I have five years of e_________ in software development.",
+      "answer": "experience",
+      "hint": "e",
+      "translation": "我有五年的软件开发经验。"
+    },
+    {
+      "id": "q4",
+      "sentence": "Thank you for giving me the opportunity to come in for an i________.",
+      "answer": "interview",
+      "hint": "i",
+      "translation": "谢谢您给我这次来面试的机会。"
+    },
+    {
+      "id": "q5",
+      "sentence": "I have researched your c______ and admire its values.",
+      "answer": "company",
+      "hint": "c",
+      "translation": "我研究过贵公司，非常欣赏你们的价值观。"
+    },
+    {
+      "id": "q6",
+      "sentence": "My greatest s_______ is my ability to solve problems quickly.",
+      "answer": "strength",
+      "hint": "s",
+      "translation": "我最大的优势是快速解决问题的能力。"
+    },
+    {
+      "id": "q7",
+      "sentence": "Sometimes my w_______ is that I pay too much attention to detail.",
+      "answer": "weakness",
+      "hint": "w",
+      "translation": "有时我的弱点是我过于关注细节。"
+    },
+    {
+      "id": "q8",
+      "sentence": "Why should we h___ you over other candidates?",
+      "answer": "hire",
+      "hint": "h",
+      "translation": "相比其他候选人，我们要为什么要录用你？"
+    },
+    {
+      "id": "q9",
+      "sentence": "What are your s_____ expectations for this role?",
+      "answer": "salary",
+      "hint": "s",
+      "translation": "你对这个职位的薪资期望是多少？"
+    },
+    {
+      "id": "q10",
+      "sentence": "I enjoy working in a t___ environment where we support each other.",
+      "answer": "team",
+      "hint": "t",
+      "translation": "我喜欢在互相支持的团队环境中工作。"
+    },
+    {
+      "id": "q11",
+      "sentence": "I am looking for a new c________ to push my career forward.",
+      "answer": "challenge",
+      "hint": "c",
+      "translation": "我在寻找新的挑战来推动我的职业发展。"
+    },
+    {
+      "id": "q12",
+      "sentence": "My short-term g___ is to improve my leadership skills.",
+      "answer": "goal",
+      "hint": "g",
+      "translation": "我的短期目标是提升我的领导能力。"
+    },
+    {
+      "id": "q13",
+      "sentence": "Can you tell me a little about your b_________?",
+      "answer": "background",
+      "hint": "b",
+      "translation": "你能简单介绍一下你的背景吗？"
+    },
+    {
+      "id": "q14",
+      "sentence": "I appreciate this o__________ to meet with you today.",
+      "answer": "opportunity",
+      "hint": "o",
+      "translation": "我很感激今天有这个机会与您见面。"
+    },
+    {
+      "id": "q15",
+      "sentence": "I am very f_______ regarding working hours and travel.",
+      "answer": "flexible",
+      "hint": "f",
+      "translation": "关于工作时间和出差，我非常灵活。"
+    },
+    {
+      "id": "q16",
+      "sentence": "I always ensure that I meet every d_______.",
+      "answer": "deadline",
+      "hint": "d",
+      "translation": "我总是确保在截止日期前完成任务。"
+    },
+    {
+      "id": "q17",
+      "sentence": "My e________ includes a Bachelor's degree in Economics.",
+      "answer": "education",
+      "hint": "e",
+      "translation": "我的教育背景包括经济学学士学位。"
+    },
+    {
+      "id": "q18",
+      "sentence": "In my last job, I was r__________ for managing the budget.",
+      "answer": "responsible",
+      "hint": "r",
+      "translation": "在上一份工作中，我负责管理预算。"
+    },
+    {
+      "id": "q19",
+      "sentence": "I can m_____ multiple tasks efficiently without losing focus.",
+      "answer": "manage",
+      "hint": "m",
+      "translation": "我能高效地管理多项任务而不分心。"
+    },
+    {
+      "id": "q20",
+      "sentence": "When would you be a________ to start working?",
+      "answer": "available",
+      "hint": "a",
+      "translation": "你什么时候可以开始工作？"
+    },
+    {
+      "id": "q21",
+      "sentence": "Please feel free to c______ me if you have any further questions.",
+      "answer": "contact",
+      "hint": "c",
+      "translation": "如果您有任何进一步的问题，请随时联系我。"
+    },
+    {
+      "id": "q22",
+      "sentence": "I can provide a r________ from my previous supervisor.",
+      "answer": "reference",
+      "hint": "r",
+      "translation": "我可以提供前任主管的推荐信。"
+    },
+    {
+      "id": "q23",
+      "sentence": "I believe I am fully q________ for this specific role.",
+      "answer": "qualified",
+      "hint": "q",
+      "translation": "我相信我完全有资格担任这个特定职位。"
+    },
+    {
+      "id": "q24",
+      "sentence": "I am used to working with a tight s_______.",
+      "answer": "schedule",
+      "hint": "s",
+      "translation": "我习惯了在紧张的时间表下工作。"
+    },
+    {
+      "id": "q25",
+      "sentence": "I am c________ that I can make a positive impact here.",
+      "answer": "confident",
+      "hint": "c",
+      "translation": "我有信心能在这里产生积极的影响。"
+    },
+    {
+      "id": "q26",
+      "sentence": "I can work well under p_______ and stay calm in a crisis.",
+      "answer": "pressure",
+      "hint": "p",
+      "translation": "我能在压力下出色工作，并在危机中保持冷静。"
+    },
+    {
+      "id": "q27",
+      "sentence": "My biggest professional a__________ was leading a successful project.",
+      "answer": "achievement",
+      "hint": "a",
+      "translation": "我职业生涯最大的成就是领导了一个成功的项目。"
+    },
+    {
+      "id": "q28",
+      "sentence": "We believe you are a strong c________ for this vacancy.",
+      "answer": "candidate",
+      "hint": "c",
+      "translation": "我们认为你是这个空缺职位的有力候选人。"
+    },
+    {
+      "id": "q29",
+      "sentence": "Communication is a key s____ required for this job.",
+      "answer": "skill",
+      "hint": "s",
+      "translation": "沟通是这项工作所需的一项关键技能。"
+    },
+    {
+      "id": "q30",
+      "sentence": "I want to c_________ to the success of your department.",
+      "answer": "contribute",
+      "hint": "c",
+      "translation": "我想为你们部门的成功做出贡献。"
+    }
+  ],
+  "createdAt": "2026-02-04T12:19:49.577Z",
+  "author": "Gemini 3.0 Pro",
+  "version": "1.0.0",
+  "difficulty": "intermediate",
+  "source": "local"
+}
